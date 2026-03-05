@@ -213,21 +213,6 @@ a:focus, .button:focus{
   font-size:14px;
 }
 
-/* subtle scroll hint */
-.scroll-hint{
-  position:absolute;
-  bottom:10px;
-  left:0;
-  font-size:18px;
-  color:rgba(31,27,26,.45);
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid rgba(20,10,10,.06);
-  background:rgba(255,255,255,.35);
-  backdrop-filter:blur(10px);
-}
-.scroll-hint:hover{text-decoration:none;opacity:.85}
-
 /* ABOUT section specifics */
 .about-lead{
   margin:0 0 14px;
