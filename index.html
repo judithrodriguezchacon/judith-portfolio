@@ -1,12 +1,11 @@
+<!-- index.html -->
 <!--
-NOTES TO MYSELF:
-- Include transcript?
-- Create/ upload a coding-heavy project
-- Add papers I've read in the facial design portion? -- is that allowed (copy right)
-- Ask Nyomi what can I include in my portfolio (like if i can say I'm working with her and her project)
-
-
-//-->
+NOTES TO MYSELF (keep it simple + real):
+-This site is already "live" even if some projects are in progress
+-Do NOT put big copyrighted figures from papers. I can summarize + cite titles/authors
+-Transcript: optional. If I add it, it's just a link (not the main flex)
+-Lab name: keep it accurate + not overly detailed if it's not public yet
+-->
 
 <!doctype html>
 <html lang="en">
@@ -15,148 +14,257 @@ NOTES TO MYSELF:
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Judith Rodriguez | Software + HRI</title>
     <link rel="stylesheet" href="styles.css" />
-    <meta name="description" content="Judith Rodriguez — CS @ Colorado School of Mines. Software, robotics, HRI." />
+    <meta
+      name="description"
+      content="Judith Rodriguez — CS @ Colorado School of Mines. Software, robotics, and Human–Robot Interaction (HRI)."
+    />
   </head>
 
   <body>
-    <header class="container">
+    <header class="container" id="top">
+      <!-- top nav -->
       <nav class="nav">
-        <a class="logo" href="#">JR</a>
+        <!-- simple logo -> scroll to top -->
+        <a class="logo" href="#top" aria-label="Home">JR</a>
+
         <div class="navlinks">
+          <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
 
-      <!-- LAUNCH HERO (biggest thing on page) -->
+      <!-- HERO: this is the "first impression" -->
       <section class="hero launch-hero">
-        <p class="launch-badge">Portfolio Launch</p>
+        <p class="launch-badge">Software + HRI</p>
 
         <h1 class="launch-title">
-          Launching <span class="accent">February 17th</span>.
+          Hi, I’m <span class="accent">Judith</span>.
         </h1>
 
         <p class="launch-subtitle">
-          I’m polishing my projects and HRI research write-ups right now.
-          The full portfolio will be live soon.
+          CS @ Colorado School of Mines (Intelligent Systems & Robotics). I build software and study how
+          <span class="nowrap">robot facial design</span> + emotional mirroring can support human connection.
         </p>
 
         <div class="launch-actions">
-          <a class="button" href="https://docs.google.com/document/d/1ZFnk-DlHtJ_BLngYO0s6KfHQ5sKS2-9WuC8XCwizzHU/edit?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
-          <a class="button secondary" href="https://github.com/judithrodriguezchacon" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/judith-rodr%C3%ADguez-1b49bb384/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a
+            class="button"
+            href="https://docs.google.com/document/d/1ZFnk-DlHtJ_BLngYO0s6KfHQ5sKS2-9WuC8XCwizzHU/edit?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            >Resume</a
+          >
+
+          <a
+            class="button secondary"
+            href="https://github.com/judithrodriguezchacon"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub</a
+          >
+
+          <a
+            class="button secondary"
+            href="https://www.linkedin.com/in/judith-rodr%C3%ADguez-1b49bb384/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a
+          >
         </div>
 
         <p class="launch-footnote">
-          Want to connect before then? Email me at
+          Want to connect? Email me at
           <a href="mailto:judith_rodriguezchacon@mines.edu">judith_rodriguezchacon@mines.edu</a>.
         </p>
+
+        <!-- tiny scroll hint so it feels intentional -->
+        <a class="scroll-hint" href="#projects" aria-label="Scroll to projects">↓</a>
       </section>
     </header>
 
-    <!-- Make the rest visible but slightly “soft” so launch hero stays dominant -->
-    <main class="container soft-below">
+    <main class="container">
+      <!-- ABOUT: this is where your "essence" comes through -->
+      <section id="about" class="section">
+        <h2>About</h2>
+
+        <div class="card">
+          <p class="about-lead">
+            I’m a Computer Science student focused on <strong>intelligent systems, robotics, and HRI</strong>.
+            I care about building systems that are technically solid <em>and</em> human-aware—especially expressive
+            robots that communicate emotion clearly and respectfully.
+          </p>
+
+          <div class="about-grid">
+            <div>
+              <p class="about-title">What I like building</p>
+              <ul>
+                <li>Clean software that feels thoughtful (tools, prototypes, experiments)</li>
+                <li>Robot expression systems (faces, parameters, mapping emotion → motion)</li>
+                <li>Interfaces that make complex data feel simple</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="about-title">Right now</p>
+              <ul>
+                <li>Writing HRI research notes + turning reading into testable design ideas</li>
+                <li>Packaging coursework projects into clean repos (docs + tests)</li>
+                <li>Building this portfolio so it feels like me (not generic)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- optional: quick identity line -->
+          <p class="muted small">
+            Based in Colorado. Open to internships and research collaborations.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
       <section id="projects" class="section">
         <h2>Projects</h2>
 
         <div class="grid">
-         
+          <!-- HRI research project -->
           <article class="card">
-            <h3>Facial Design for Expresing-Emotion Robot</h3>
-            <p>Quick summary, about the papers I've read, what I learned and next steps?</p>
+            <h3>Robot Facial Expressions + Emotional Mirroring (HRI Research)</h3>
+
+            <p>
+              Literature-driven design work for expressive robotic faces. I turn papers and reference diagrams into
+              controllable design parameters, then document what to test next (and why).
+            </p>
+
             <div class="tags">
-              <span>HRI</span><span>Research</span><span>Mirroring</span>
+              <span>HRI</span><span>Research</span><span>Facial Design</span><span>Emotion</span>
             </div>
+
             <div class="links">
-              <a href="https://docs.google.com/document/d/1dg6UfOkLV4hZcy-M__uX1fjmMAhjZQ8BGlQsAaACL4A/edit?tab=t.0" target="_blank" rel="noreferrer">Write-up</a>
+              <a
+                href="https://docs.google.com/document/d/1dg6UfOkLV4hZcy-M__uX1fjmMAhjZQ8BGlQsAaACL4A/edit?tab=t.0"
+                target="_blank"
+                rel="noreferrer"
+                >Write-up</a
+              >
             </div>
+
+            <!-- tiny note: keep it legal -->
+            <p class="muted small">
+              Note: summaries are my own words (no copied figures/text).
+            </p>
           </article>
 
-           <article class="card">
-            <h3>Automated Watering System -- Indoor Smart Pot (UI Layout)</h3>
-            <p>Designed the mobile app layout and user flow for an indoor watering system. Built screens and navigation that make
-             monitoring moisture, scheduling watering, and viewing plant status simple and fast.</p>
+          <!-- UI project -->
+          <article class="card">
+            <h3>Indoor Smart Pot — App UI Layout + User Flow</h3>
+
+            <p>
+              Designed a mobile UI for monitoring soil moisture, scheduling watering, and checking plant status quickly.
+              Focused on clean flow, readable info, and low-friction actions.
+            </p>
+
             <div class="tags">
-              <span>UI/UX</span><span>User-friendly</span><span>Prototyping</span><span>Intuitive</span>
+              <span>UI/UX</span><span>Prototyping</span><span>User Flow</span><span>Product</span>
             </div>
+
             <div class="links">
               <a href="Automated Watering System UI.pdf" target="_blank" rel="noreferrer">Write-up</a>
               <a href="AWSUI_images.pdf" target="_blank" rel="noreferrer">Images</a>
             </div>
           </article>
 
+          <!-- coding project placeholder but professional -->
           <article class="card">
-            <h3>Coding project</h3>
-            <p>Be patient. I'll update this soon. </p>
+            <h3>Graph Search + State Modeling (Coursework → Repo)</h3>
+
+            <p>
+              Search + optimization implementations where state design matters (not just “run Dijkstra and pray”).
+              I’m packaging this into a clean repo with test cases and a short technical write-up.
+            </p>
+
             <div class="tags">
-              <span>tag</span><span>tag</span><span>tag</span>
+              <span>Python</span><span>Algorithms</span><span>Search</span><span>Systems Thinking</span>
             </div>
+
             <div class="links">
               <a href="YOUR_REPO_LINK" target="_blank" rel="noreferrer">Code</a>
             </div>
+
+            <p class="muted small">
+              (In progress) — I’m shipping the write-up + tests next.
+            </p>
           </article>
         </div>
       </section>
 
+      <!-- EXPERIENCE -->
       <section id="experience" class="section">
-
         <h2>Experience</h2>
-        <div class="card">
-          <h3>Math Tutor • Colorado School of Mines</h3>
-          <p class="muted">Golden, CO</p>
-          <ul>
-            <li>Supported students in calculus/linear algebra through structured problem-solving and clear explanations.</li>
-            <li>Improved student outcomes by tailoring practice sets and identifying recurring misconceptions.</li>
-          </ul>
-        </div>
 
-        <div class="card">
-          <h3>CS Tutor • Independent</h3>
-          <p class="muted">Golden, CO</p>
-          <ul>
-            <li>Supported students in calculus/linear algebra through structured problem-solving and clear explanations.</li>
-            <li>Improved student outcomes by tailoring practice sets and identifying recurring misconceptions.</li>
-          </ul>
-        </div>
-        
-        <div class="card">
-          <h3>Math Tutor • Colorado School of Mines</h3>
-          <p class="muted">Golden, CO • (add dates)</p>
-          <ul>
-            <li>Supported students in calculus/linear algebra through structured problem-solving and clear explanations.</li>
-            <li>Improved student outcomes by tailoring practice sets and identifying recurring misconceptions.</li>
-          </ul>
-        </div>
+        <!-- keep these cards consistent and clean -->
+        <div class="stack">
+          <div class="card">
+            <h3>Human–Robot Interaction Researcher • MIRRORLab</h3>
+            <p class="muted">Colorado School of Mines • (Month YYYY – Present)</p>
+            <ul>
+              <li>Research focus: robot facial design + emotional mirroring to support self-disclosure.</li>
+              <li>Convert reading into actionable constraints, experiments, and design notes for iteration.</li>
+            </ul>
+          </div>
 
-        <div class="card">
-          <h3>Human–Robot Interaction Researcher • MirrorLab</h3>
-          <p class="muted">Colorado School of Mines</p>
-          <ul>
-            <li>Research focus: facial design and emotional mirroring for robots to facilitate self-disclosure.</li>
-            <li></li>
-          </ul>
-        </div>
+          <div class="card">
+            <h3>Math Tutor • Colorado School of Mines</h3>
+            <p class="muted">Golden, CO • (Month YYYY – Present)</p>
+            <ul>
+              <li>Support students through structured problem-solving and clear explanations.</li>
+              <li>Design practice sets around recurring misconceptions to improve outcomes.</li>
+            </ul>
+          </div>
 
-        <div class="card">
-          <h3>Sales Representative • Talk4less</h3>
-          <p class="muted">Greeley, CO • (add dates)</p>
-          <ul>
-            <li>Assisted customers with mobile services and technical troubleshooting, improving client satisfaction </li>
-            <li>Consistently exceeded sales targets by 25-35% above my goal</li>
-          </ul>
+          <div class="card">
+            <h3>CS Tutor • Independent</h3>
+            <p class="muted">Golden, CO • (Month YYYY – Present)</p>
+            <ul>
+              <li>Tutored 25+ students in C, C++, and Python with an emphasis on debugging habits + fundamentals.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Sales Representative • Talk4less</h3>
+            <p class="muted">Greeley, CO • (Month YYYY – Month YYYY)</p>
+            <ul>
+              <li>Assisted customers with mobile services and technical troubleshooting to improve satisfaction.</li>
+              <li>Exceeded sales targets by ~25–35% above goal (typical weeks).</li>
+            </ul>
+          </div>
         </div>
-        
       </section>
 
+      <!-- CONTACT -->
       <section id="contact" class="section">
         <h2>Contact</h2>
 
         <div class="card">
           <p>If you want to chat about internships, HRI, or projects:</p>
+
           <p class="contact">
-            <a href="mailto:judith_rodriguezchacon@mines.edu">judith_rodriguezchacon@mines.edu</a> •
-            <a href="https://www.linkedin.com/in/judith-rodr%C3%ADguez-1b49bb384/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:judith_rodriguezchacon@mines.edu">judith_rodriguezchacon@mines.edu</a>
+            <span class="dot">•</span>
+            <a
+              href="https://www.linkedin.com/in/judith-rodr%C3%ADguez-1b49bb384/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+            <span class="dot">•</span>
+            <a href="https://github.com/judithrodriguezchacon" target="_blank" rel="noreferrer">GitHub</a>
+          </p>
+
+          <!-- little human touch -->
+          <p class="muted small">
+            I’m especially interested in roles that mix software + people-centered robotics.
           </p>
         </div>
       </section>
@@ -167,6 +275,7 @@ NOTES TO MYSELF:
     </main>
 
     <script>
+      //tiny JS only for the year (keep it clean)
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>

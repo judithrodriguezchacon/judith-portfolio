@@ -1,5 +1,7 @@
+/* styles.css */
+
+/* vibe: pearl + coral + graphite (soft but confident) */
 :root{
-  /* Core palette: pearl + coral + graphite */
   --bg:#fbf7f6;                /* pearl */
   --bg2:#fff1ee;               /* blush wash */
   --card:rgba(255,255,255,.72);/* frosted card */
@@ -12,11 +14,12 @@
   --shadow:0 18px 60px rgba(20,10,10,.08);
 }
 
-/* Reset */
+/* reset (no drama) */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+html{scroll-behavior:smooth} /* makes nav feel expensive lol */
 
-/* Page */
+/* page */
 body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color:var(--text);
@@ -28,16 +31,20 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Links */
+/* links */
 a{color:inherit;text-decoration:none}
 a:hover{opacity:.92;text-decoration:underline}
+.nowrap{white-space:nowrap} /* keeps phrases together */
 
-/* Layout */
+/* layout */
 .container{max-width:980px;margin:0 auto;padding:26px}
 .section{margin:36px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.stack{display:grid;gap:14px} /* for experience cards */
+.small{font-size:13.5px}
+.dot{margin:0 8px;color:rgba(31,27,26,.35)}
 
-/* Headings */
+/* headings */
 h1{
   font-size:46px;
   line-height:1.05;
@@ -49,14 +56,8 @@ h2{
   margin:0 0 14px;
   letter-spacing:-.01em;
 }
-.subtitle{
-  max-width:720px;
-  color:var(--muted);
-  font-size:16.5px;
-  line-height:1.65;
-}
 
-/* Nav */
+/* nav */
 .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
 .logo{
   font-weight:800;
@@ -74,8 +75,7 @@ h2{
 }
 .navlinks{display:flex;gap:16px;color:var(--muted)}
 
-/* Buttons */
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+/* buttons */
 .button{
   display:inline-flex;
   align-items:center;
@@ -103,7 +103,7 @@ h2{
 }
 .button.secondary:hover{box-shadow:0 14px 34px rgba(20,10,10,.08)}
 
-/* Cards */
+/* cards */
 .card{
   background:var(--card);
   border:1px solid var(--border);
@@ -118,9 +118,9 @@ h2{
   box-shadow:0 22px 70px rgba(20,10,10,.10);
 }
 .card h3{margin:0 0 8px;font-size:16.5px;letter-spacing:-.01em}
-.card p{margin:0 0 12px;color:var(--muted);line-height:1.6}
+.card p{margin:0 0 12px;color:var(--muted);line-height:1.6;font-size:15px}
 
-/* Tags */
+/* tags */
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 6px}
 .tags span{
   font-size:12px;
@@ -131,16 +131,17 @@ h2{
   border-radius:999px;
 }
 
-/* Links within cards */
+/* links inside cards */
 .links{display:flex;gap:14px;color:var(--accent);font-weight:700}
+.links a{overflow-wrap:anywhere}
 .links a:hover{opacity:.9}
 
-/* Muted / lists / contact */
+/* muted / lists / contact */
 .muted{color:var(--muted)}
-ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.7}
+ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.7;font-size:15px}
 .contact{color:var(--muted)}
 
-/* Footer */
+/* footer */
 .footer{
   padding:18px 0;
   color:var(--muted);
@@ -149,23 +150,22 @@ ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.7}
   margin-top:28px;
 }
 
-/* Focus ring */
+/* focus ring (accessibility but cute) */
 a:focus, .button:focus{
   outline:none;
   box-shadow:0 0 0 4px var(--ring);
   border-radius:999px;
 }
 
-
-
-/* Make the first view dominated by launch info */
+/* HERO: make the first view feel intentional */
 .launch-hero{
   min-height:78vh;
-  padding:28px 0 16px;
+  padding:28px 0 18px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:flex-start;
+  position:relative;
 }
 
 .launch-badge{
@@ -190,13 +190,11 @@ a:focus, .button:focus{
   letter-spacing:-.03em;
 }
 
-.accent{
-  color:var(--accent);
-}
+.accent{color:var(--accent)}
 
 .launch-subtitle{
   margin:0;
-  max-width:620px;
+  max-width:680px;
   font-size:18px;
   line-height:1.7;
   color:var(--muted);
@@ -215,17 +213,48 @@ a:focus, .button:focus{
   font-size:14px;
 }
 
-/* Make content below look intentionally “secondary” */
-.soft-below{
-  opacity:.92;
+/* subtle scroll hint */
+.scroll-hint{
+  position:absolute;
+  bottom:10px;
+  left:0;
+  font-size:18px;
+  color:rgba(31,27,26,.45);
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(20,10,10,.06);
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(10px);
+}
+.scroll-hint:hover{text-decoration:none;opacity:.85}
+
+/* ABOUT section specifics */
+.about-lead{
+  margin:0 0 14px;
+  color:var(--text);
+  line-height:1.75;
+  font-size:15.5px;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:12px;
+}
+.about-title{
+  margin:0 0 6px;
+  font-weight:750;
+  color:rgba(31,27,26,.86);
 }
 
-/* Hide old launch notice if it exists (you removed it, but safe) */
-.launch-notice{display:none}
+/* mobile */
+@media (max-width:720px){
+  .about-grid{grid-template-columns:1fr} /* stack it */
+}
 
-/* Mobile */
 @media (max-width:520px){
   .container{padding:20px}
   .launch-title{font-size:42px}
   .launch-subtitle{font-size:16.5px}
+  .navlinks{gap:12px}
 }
